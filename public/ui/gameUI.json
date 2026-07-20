@@ -1,0 +1,174 @@
+{
+  "element": {
+    "type": "container",
+    "sourceTag": "div",
+    "children": [
+      {
+        "sourceTag": "span",
+        "type": "custom",
+        "children": [
+          "Congratulations!"
+        ],
+        "properties": {
+          "id": "congrats-text",
+          "class": "congrats-text"
+        },
+        "dataUid": "uid-2"
+      },
+      {
+        "type": "container",
+        "sourceTag": "div",
+        "children": [
+          {
+            "sourceTag": "button",
+            "type": "custom",
+            "children": [
+              "Restart"
+            ],
+            "properties": {
+              "id": "restart-button",
+              "class": "restart-button"
+            },
+            "dataUid": "uid-4"
+          }
+        ],
+        "properties": {
+          "id": "playagain-row",
+          "class": "playagain-row"
+        },
+        "dataUid": "uid-3"
+      }
+    ],
+    "properties": {
+      "class": "center-panel"
+    },
+    "dataUid": "uid-1"
+  },
+  "classes": {
+    "center-panel": {
+      "content": {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "padding": "5",
+        "display": "flex",
+        "flexDirection": "column",
+        "backgroundColor": "#0d0221",
+        "borderColor": "#fbbf24",
+        "borderWidth": "0.2",
+        "borderRadius": 3,
+        "gap": "3"
+      }
+    },
+    "congrats-text": {
+      "content": {
+        "fontSize": "6",
+        "color": "#fbbf24",
+        "textAlign": "center",
+        "fontWeight": "bold"
+      }
+    },
+    "playagain-row": {
+      "content": {
+        "display": "none",
+        "flexDirection": "row",
+        "alignItems": "center"
+      }
+    },
+    "restart-button": {
+      "content": {
+        "padding": "1.6",
+        "backgroundColor": "#7b2ff2",
+        "color": "#ffffff",
+        "borderRadius": 1.3,
+        "borderWidth": "0",
+        "fontSize": "2.6",
+        "fontWeight": "bold",
+        "textAlign": "center",
+        "cursor": "pointer",
+        "width": "14"
+      }
+    }
+  },
+  "ranges": {
+    "center-panel": {
+      "start": {
+        "line": 1,
+        "column": 2
+      },
+      "end": {
+        "line": 1,
+        "column": 15
+      }
+    },
+    "congrats-text": {
+      "start": {
+        "line": 14,
+        "column": 2
+      },
+      "end": {
+        "line": 14,
+        "column": 16
+      }
+    },
+    "playagain-row": {
+      "start": {
+        "line": 21,
+        "column": 2
+      },
+      "end": {
+        "line": 21,
+        "column": 16
+      }
+    },
+    "restart-button": {
+      "start": {
+        "line": 27,
+        "column": 2
+      },
+      "end": {
+        "line": 27,
+        "column": 17
+      }
+    },
+    "uid-1": {
+      "start": {
+        "line": 40,
+        "column": 0
+      },
+      "end": {
+        "line": 45,
+        "column": 6
+      }
+    },
+    "uid-2": {
+      "start": {
+        "line": 41,
+        "column": 2
+      },
+      "end": {
+        "line": 41,
+        "column": 72
+      }
+    },
+    "uid-3": {
+      "start": {
+        "line": 42,
+        "column": 2
+      },
+      "end": {
+        "line": 44,
+        "column": 8
+      }
+    },
+    "uid-4": {
+      "start": {
+        "line": 43,
+        "column": 4
+      },
+      "end": {
+        "line": 43,
+        "column": 71
+      }
+    }
+  }
+}

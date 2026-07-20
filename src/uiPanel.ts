@@ -123,12 +123,13 @@ export class PanelSystem extends createSystem({
       });
 
       this.world.visibilityState.subscribe((visibilityState) => {
+        const nonImmersive = visibilityState === VisibilityState.NonImmersive;
         xrButton.setProperties({
-          text:
-            visibilityState === VisibilityState.NonImmersive
-              ? "Enter XR"
-              : "Exit to Browser",
+          text: nonImmersive ? "Enter XR" : "Exit to Browser",
         });
+        // Hide the entry panel once inside XR so it doesn't float in the
+        // player's way; the headset's own system UI can still end the session.
+        if (entity.object3D) entity.object3D.visible = nonImmersive;
       });
     }, true);
   }

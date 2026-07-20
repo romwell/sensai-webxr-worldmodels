@@ -1,0 +1,46 @@
+<style>
+  .center-panel {
+    align-items: center;
+    justify-content: center;
+    padding: 5;
+    display: flex;
+    flex-direction: column;
+    background-color: #0d0221;
+    border-color: #fbbf24;
+    border-width: 0.2;
+    border-radius: 3;
+    gap: 3;
+  }
+
+  .congrats-text {
+    font-size: 6;
+    color: #fbbf24;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .playagain-row {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .restart-button {
+    padding: 1.6;
+    background-color: #7b2ff2;
+    color: #ffffff;
+    border-radius: 1.3;
+    border-width: 0;
+    font-size: 2.6;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    width: 14;
+  }
+</style>
+<div class="center-panel">
+  <span id="congrats-text" class="congrats-text">Congratulations!</span>
+  <div id="playagain-row" class="playagain-row">
+    <button id="restart-button" class="restart-button">Restart</button>
+  </div>
+</div>

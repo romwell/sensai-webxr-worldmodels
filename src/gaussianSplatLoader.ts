@@ -47,7 +47,7 @@ function patchHostTransformSync(object3D: THREE.Object3D): void {
  * children so they inherit the entity's transform.
  */
 export const GaussianSplatLoader = createComponent("GaussianSplatLoader", {
-  splatUrl: { type: Types.String, default: "./splats/sensai.spz" },
+  splatUrl: { type: Types.String, default: "./splats/dymax_hi.ply" },
   meshUrl: { type: Types.String, default: "" },
   autoLoad: { type: Types.Boolean, default: true },
   animate: { type: Types.Boolean, default: false },

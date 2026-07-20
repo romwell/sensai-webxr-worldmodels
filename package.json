@@ -11,7 +11,7 @@
   "dependencies": {
     "@iwsdk/core": "0.2.2",
     "@sparkjsdev/spark": "github:sparkjsdev/spark#v2.0.0-preview",
-    "three": "npm:super-three@0.181.0"
+    "three": "npm:super-three@^0.181.0"
   },
   "devDependencies": {
     "@iwsdk/vite-plugin-gltf-optimizer": "0.2.2",
@@ -24,5 +24,10 @@
   },
   "engines": {
     "node": ">=20.19.0"
+  },
+  "allowScripts": {
+    "esbuild@0.27.3": true,
+    "fsevents@2.3.3": true,
+    "sharp@0.34.5": true
   }
 }

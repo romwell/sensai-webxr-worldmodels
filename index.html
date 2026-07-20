@@ -1,6 +1,21 @@
 <!doctype html>
 <html>
   <head>
+    <script>
+      // The IWER desktop/simulator runtime emulates navigator.xr, but its
+      // session objects aren't native XRSession instances. Chrome still
+      // exposes a native XRWebGLBinding constructor, and three.js's
+      // WebXRManager caches `typeof XRWebGLBinding !== 'undefined'` at
+      // module-load time (a race against IWER's own async runtime setup,
+      // which normally clears this global for exactly this reason). When
+      // the native constructor wins that race, it rejects IWER's session
+      // with "parameter 1 is not of type 'XRSession'" and the XR session
+      // fails to start. Force the WebGLLayer fallback path during local
+      // simulator testing only; real headsets keep native Layers support.
+      if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+        window.XRWebGLBinding = undefined;
+      }
+    </script>
     <meta charset="utf-8" />
     <meta
       name="viewport"

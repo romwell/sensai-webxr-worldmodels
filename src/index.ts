@@ -15,7 +15,7 @@ import {
 } from "@iwsdk/core";
 import { PanelSystem } from "./uiPanel.js";
 import { GaussianSplatLoader, GaussianSplatLoaderSystem,} from "./gaussianSplatLoader.js";
-import { spawnHologramSphere } from "./interactableExample.js";
+import { FlowerGameSystem } from "./flowerGame.js";
 
 
 // ------------------------------------------------------------
@@ -45,7 +45,8 @@ World.create(document.getElementById("scene-container") as HTMLDivElement, {
 
     world
       .registerSystem(PanelSystem)
-      .registerSystem(GaussianSplatLoaderSystem);
+      .registerSystem(GaussianSplatLoaderSystem)
+      .registerSystem(FlowerGameSystem);
 
 
     // ------------------------------------------------------------
@@ -84,12 +85,6 @@ World.create(document.getElementById("scene-container") as HTMLDivElement, {
 
 
     // ------------------------------------------------------------
-    // Hologram Sphere (distance-grabbable, translate in place)
-    // ------------------------------------------------------------
-    spawnHologramSphere(world);
-
-
-    // ------------------------------------------------------------
     // Panel UI (centered on screen in desktop, positioned in 3D for XR)
     // ------------------------------------------------------------
     const panelEntity = world
@@ -109,6 +104,21 @@ World.create(document.getElementById("scene-container") as HTMLDivElement, {
         width: "40%",
       });
     panelEntity.object3D!.position.set(0, 1.29, -1.9);
+
+
+    // ------------------------------------------------------------
+    // Game Win / Play-Again Panel (world-anchored, hidden until victory)
+    // ------------------------------------------------------------
+    const gameUIEntity = world
+      .createTransformEntity()
+      .addComponent(PanelUI, {
+        config: "./ui/gameUI.json",
+        maxHeight: 1.1,
+        maxWidth: 2.2,
+      })
+      .addComponent(Interactable);
+    gameUIEntity.object3D!.position.set(0, 1.6, -2.5);
+    gameUIEntity.object3D!.visible = false;
 
   })
   .catch((err) => {
